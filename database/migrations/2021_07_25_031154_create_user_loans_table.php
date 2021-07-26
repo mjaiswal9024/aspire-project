@@ -27,8 +27,8 @@ class CreateUserLoansTable extends Migration
 
             $table->integer('tenure')->comment('duration in weeks');
 
-            $table->decimal('interest_rate');
-            $table->decimal('processing_fee');
+            $table->decimal('interest_rate')->nullable();
+            $table->decimal('processing_fee')->nullable();
 
             $table->unsignedInteger('loan_status_id');
             $table->foreign('loan_status_id')->references('id')->on('lookup_values');

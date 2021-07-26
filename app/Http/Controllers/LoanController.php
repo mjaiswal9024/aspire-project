@@ -34,7 +34,7 @@ class LoanController extends Controller
         $userLoan = new UserLoan();
         $userLoan->amount = $request->amount;
         $userLoan->user_id = $userId;
-        $userLoan->tenure = 20;
+        $userLoan->tenure = $request->tenure;
         $userLoan->loan_status_id = UserLoan::NEW;
         $userLoan->save();
 
