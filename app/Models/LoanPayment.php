@@ -17,15 +17,15 @@ class LoanPayment extends Model
     /**
      *
      */
-    const PENDING = 1;
+    const PENDING = 5;
     /**
      *
      */
-    const PAID = 2;
+    const PAID = 6;
     /**
      *
      */
-    const MISSED = 3;
+    const MISSED = 7;
 
     /**
      * @var string
