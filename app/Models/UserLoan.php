@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Observers\UserLoanObserver;
 
 /**
  * Class UserLoan
@@ -53,5 +54,11 @@ class UserLoan extends Model
     public function loan_payments ()
     {
         return $this->hasMany(LoanPayment::class, 'loan_id')->where('status_id', LoanPayment::PAID);
+    }
+
+    protected static function boot ()
+    {
+        parent::boot();
+        self::observe(new UserLoanObserver());
     }
 }

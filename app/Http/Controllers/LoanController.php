@@ -41,13 +41,19 @@ class LoanController extends Controller
         return response()->json(['success' => true, 'response' => 'Request for loan sent successfully']);
     }
 
-    public function approveLoan ()
+    /**
+     * @param $id
+     */
+    public function approveLoan ($id)
     {
-
+        //update the status of the loan to approved
     }
 
-    public function rejectLoan ()
+    /**
+     * @param $id
+     */
+    public function rejectLoan ($id)
     {
-        
+        //update the status of the loan to rejected
     }
 }
