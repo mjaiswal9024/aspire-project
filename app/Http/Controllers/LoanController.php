@@ -20,7 +20,7 @@ class LoanController extends Controller
     {
         $userId = Auth::id();
 
-        if (!$userId)
+        if ( !$userId )
             return response()->json(['success' => false, 'response' => 'Please login to apply loan']);
 
         $userLoan = UserLoan::where('user_id', $userId)
@@ -39,5 +39,15 @@ class LoanController extends Controller
         $userLoan->save();
 
         return response()->json(['success' => true, 'response' => 'Request for loan sent successfully']);
+    }
+
+    public function approveLoan ()
+    {
+
+    }
+
+    public function rejectLoan ()
+    {
+        
     }
 }

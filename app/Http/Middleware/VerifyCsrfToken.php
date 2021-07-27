@@ -16,5 +16,7 @@ class VerifyCsrfToken extends Middleware
         'login',
         'logout',
         'applyLoan',
+        'approveLoan/*',
+        'rejectLoan/*',
     ];
 }

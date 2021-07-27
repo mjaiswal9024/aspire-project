@@ -24,4 +24,6 @@ Route::post('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
 
 Route::post('/applyLoan', [LoanController::class, 'applyLoan']);
+Route::get('/approveLoan/{id}', [LoanController::class, 'approveLoan']);
+Route::get('/rejectLoan/{id}', [LoanController::class, 'rejectLoan']);
 
